@@ -1,0 +1,126 @@
+
+@model WebApplication1.Models.AgentModel
+
+@{
+    ViewData["Title"] = "Agent Registration";
+    ViewData["Section"] = "PERSONNEL / NEW RECORD";
+}
+
+<div class="create-page">
+    <div class="page-eyebrow">
+        <span class="status-dot"></span>
+        PERSONNEL DIVISION
+        <span class="eyebrow-divider">/</span>
+        NEW RECORD
+    </div>
+
+    <div class="create-heading">
+        <div>
+            <h1>Agent <span>Registration</span></h1>
+            <p>
+                Establish a new personnel record in the intelligence directory.
+            </p>
+        </div>
+
+        <div class="record-stamp">
+            <span>DOCUMENT</span>
+            <strong>001-A</strong>
+            <span>CONFIDENTIAL</span>
+        </div>
+    </div>
+
+    <div class="form-panel">
+        <div class="form-panel-header">
+            <div>
+                <span class="panel-index">01</span>
+                <span class="panel-title">PERSONNEL DETAILS</span>
+            </div>
+            <span class="panel-code">SIS / REGISTRY</span>
+        </div>
+
+        <form asp-controller="Agent"
+              asp-action="Create"
+              method="post">
+
+            <div asp-validation-summary="ModelOnly"
+                 class="validation-summary"></div>
+
+            <div class="form-grid">
+                <div class="form-field">
+                    <label asp-for="Id">AGENT IDENTIFIER</label>
+                    <input asp-for="Id"
+                           class="form-input"
+                           placeholder="e.g. 007"
+                           autocomplete="off" />
+                    <span asp-validation-for="Id"
+                          class="field-error"></span>
+                    <span class="field-hint">
+                        UNIQUE PERSONNEL REFERENCE
+                    </span>
+                </div>
+
+                <div class="form-field">
+                    <label asp-for="Name">FULL NAME</label>
+                    <input asp-for="Name"
+                           class="form-input"
+                           placeholder="Enter full name"
+                           autocomplete="off" />
+                    <span asp-validation-for="Name"
+                          class="field-error"></span>
+                    <span class="field-hint">
+                        LEGAL OR REGISTERED NAME
+                    </span>
+                </div>
+
+                <div class="form-field">
+                    <label asp-for="Nationality">NATIONALITY</label>
+                    <input asp-for="Nationality"
+                           class="form-input"
+                           placeholder="Enter nationality"
+                           autocomplete="off" />
+                    <span asp-validation-for="Nationality"
+                          class="field-error"></span>
+                    <span class="field-hint">
+                        COUNTRY OF NATIONALITY
+                    </span>
+                </div>
+
+                <div class="form-field">
+                    <label asp-for="Organization">ORGANIZATION</label>
+                    <input asp-for="Organization"
+                           class="form-input"
+                           placeholder="Enter organization"
+                           autocomplete="off" />
+                    <span asp-validation-for="Organization"
+                          class="field-error"></span>
+                    <span class="field-hint">
+                        CURRENT AFFILIATION
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-footer">
+                <div class="required-note">
+                    <span>*</span> ALL FIELDS REQUIRED
+                </div>
+
+                <button type="submit" class="submit-button">
+                    REGISTER PERSONNEL
+                    <span>→</span>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="security-note">
+        <span class="security-mark">i</span>
+        <p>
+            <strong>HANDLING NOTICE</strong>
+            <span>
+                Personnel information should be accurate and handled
+                in accordance with applicable access policies.
+            </span>
+        </p>
+        <span class="security-reference">REF. SIS-01</span>
+    </div>
+</div>
