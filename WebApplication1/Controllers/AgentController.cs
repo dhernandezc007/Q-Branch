@@ -5,30 +5,43 @@ namespace WebApplication1.Controllers;
 
 public class AgentController : Controller
 {
-    // GET
+    private static readonly List<AgentModel> Agents = new();
+
     [HttpGet]
     public IActionResult Create()
     {
-        return View();
+        return View(Agents);
     }
 
     [HttpPost]
-    public IActionResult Create(AgentModel agent)
+    public IActionResult Create(
+        string id,
+        string name,
+        string nationality,
+        string organization,
+        string status)
     {
-        if (!ModelState.IsValid)
+        if (!string.IsNullOrWhiteSpace(id) &&
+            !string.IsNullOrWhiteSpace(name) &&
+            !string.IsNullOrWhiteSpace(nationality) &&
+            !string.IsNullOrWhiteSpace(organization))
         {
-            return View(agent);
+            // Accept only the two supported status values.
+            if (status != "Active" && status != "Inactive")
+            {
+                status = "Active";
+            }
 
+            Agents.Add(new AgentModel
+            {
+                Id = id,
+                Name = name,
+                Nationality = nationality,
+                Organization = organization,
+                Status = status
+            });
         }
-        
-        string agentId = agent.Id;
-        string agentName = agent.Name;
-        string agentNationality = agent.Nationality;
-        string agentOrganization = agent.Organization;
-        
-        return Content(
-            $"Agent created: {agentName}, " +
-            $"{agentNationality}, {agentOrganization}"
-        );
+
+        return RedirectToAction(nameof(Create));
     }
 }

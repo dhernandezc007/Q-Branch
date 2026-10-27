@@ -225,3 +225,4 @@
 /Users/dannyhernandez/RiderProjects/WebApplication1/WebApplication1/obj/Debug/net8.0/WebApplication1.RazorAssemblyInfo.cache
 /Users/dannyhernandez/RiderProjects/WebApplication1/WebApplication1/obj/Debug/net8.0/WebApplication1.RazorAssemblyInfo.cs
 /Users/dannyhernandez/RiderProjects/WebApplication1/WebApplication1/bin/Debug/net8.0/WebApplication1.staticwebassets.runtime.json
+/Users/dannyhernandez/RiderProjects/WebApplication1/WebApplication1/obj/Debug/net8.0/WebApplication1.sourcelink.json

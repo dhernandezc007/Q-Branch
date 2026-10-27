@@ -425,3 +425,237 @@ body {
     font-size: 9px;
     letter-spacing: 0.1em;
 }
+
+
+/* HOME / COMMAND CENTER */
+
+.home-page {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 0 48px;
+}
+
+.welcome-section {
+    padding: 80px 0 72px;
+    max-width: 760px;
+}
+
+.welcome-label {
+    color: #6fafff;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.welcome-section h1 {
+    color: #f0f5ff;
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.08;
+    letter-spacing: -2.5px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.welcome-section h1 span {
+    color: #5798f7;
+}
+
+.welcome-description {
+    color: #91a2bd;
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 490px;
+    margin: 24px 0 30px;
+}
+
+.home-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.home-primary-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 28px;
+    text-decoration: none;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid #24334b;
+    padding-bottom: 16px;
+    margin-bottom: 18px;
+    color: #dce7fa;
+    font-size: 11px;
+    letter-spacing: 1.8px;
+}
+
+.panel-code {
+    color: #6f829f;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.division-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.division-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 210px;
+    padding: 24px;
+    border: 1px solid #263751;
+    background: linear-gradient(145deg, #111e32, #0b1423);
+    color: #eef4ff;
+    text-decoration: none;
+    transition: border-color 180ms ease,
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+a.division-card:hover {
+    border-color: #5798f7;
+    transform: translateY(-3px);
+    background: linear-gradient(145deg, #162944, #0b1423);
+}
+
+.division-number {
+    color: #6fafff;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    margin-bottom: 30px;
+}
+
+.division-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.division-description {
+    color: #91a2bd;
+    font-size: 12px;
+    line-height: 1.7;
+    max-width: 230px;
+}
+
+.division-arrow {
+    position: absolute;
+    right: 22px;
+    top: 20px;
+    color: #6fafff;
+    font-size: 18px;
+}
+
+.division-disabled {
+    opacity: 0.7;
+}
+
+.coming-soon {
+    color: #8192ad;
+    font-size: 9px;
+    letter-spacing: 1px;
+    margin-top: auto;
+    padding-top: 22px;
+}
+
+.home-notice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid #24334b;
+    margin-top: 34px;
+    padding-top: 20px;
+    color: #91a2bd;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.home-notice .panel-code {
+    margin-left: auto;
+}
+
+@media (max-width: 760px) {
+    .welcome-section {
+        padding: 56px 0;
+    }
+
+    .division-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .division-card {
+        min-height: 180px;
+    }
+
+    .welcome-section h1 {
+        letter-spacing: -1.5px;
+    }
+}
+
+
+.operation-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 0;
+    border-bottom: 1px solid #263751;
+}
+
+.operation-row:last-child {
+    border-bottom: none;
+}
+
+.operation-row strong {
+    color: #eef4ff;
+    font-weight: 500;
+}
+
+.operation-row p {
+    color: #91a2bd;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.operation-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.operation-link {
+    color: #6fafff;
+    background: none;
+    border: none;
+    font: inherit;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.operation-link:hover {
+    color: #ffffff;
+}
+
+.delete-link {
+    color: #ef8585;
+}
+
+@media (max-width: 600px) {
+    .operation-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

@@ -1,5 +1,5 @@
 
-@model WebApplication1.Models.AgentModel
+@model List<WebApplication1.Models.AgentModel>
 
 @{
     ViewData["Title"] = "Agent Registration";
@@ -29,6 +29,7 @@
         </div>
     </div>
 
+    <!-- Agent registration form -->
     <div class="form-panel">
         <div class="form-panel-header">
             <div>
@@ -42,59 +43,65 @@
               asp-action="Create"
               method="post">
 
-            <div asp-validation-summary="ModelOnly"
-                 class="validation-summary"></div>
-
             <div class="form-grid">
                 <div class="form-field">
-                    <label asp-for="Id">AGENT IDENTIFIER</label>
-                    <input asp-for="Id"
+                    <label for="id">AGENT IDENTIFIER</label>
+                    <input id="id" name="id"
                            class="form-input"
                            placeholder="e.g. 007"
-                           autocomplete="off" />
-                    <span asp-validation-for="Id"
-                          class="field-error"></span>
+                           autocomplete="off"
+                           required />
                     <span class="field-hint">
                         UNIQUE PERSONNEL REFERENCE
                     </span>
                 </div>
 
                 <div class="form-field">
-                    <label asp-for="Name">FULL NAME</label>
-                    <input asp-for="Name"
+                    <label for="name">FULL NAME</label>
+                    <input id="name" name="name"
                            class="form-input"
                            placeholder="Enter full name"
-                           autocomplete="off" />
-                    <span asp-validation-for="Name"
-                          class="field-error"></span>
+                           autocomplete="off"
+                           required />
                     <span class="field-hint">
                         LEGAL OR REGISTERED NAME
                     </span>
                 </div>
 
                 <div class="form-field">
-                    <label asp-for="Nationality">NATIONALITY</label>
-                    <input asp-for="Nationality"
+                    <label for="nationality">NATIONALITY</label>
+                    <input id="nationality" name="nationality"
                            class="form-input"
                            placeholder="Enter nationality"
-                           autocomplete="off" />
-                    <span asp-validation-for="Nationality"
-                          class="field-error"></span>
+                           autocomplete="off"
+                           required />
                     <span class="field-hint">
                         COUNTRY OF NATIONALITY
                     </span>
                 </div>
 
                 <div class="form-field">
-                    <label asp-for="Organization">ORGANIZATION</label>
-                    <input asp-for="Organization"
+                    <label for="organization">ORGANIZATION</label>
+                    <input id="organization" name="organization"
                            class="form-input"
                            placeholder="Enter organization"
-                           autocomplete="off" />
-                    <span asp-validation-for="Organization"
-                          class="field-error"></span>
+                           autocomplete="off"
+                           required />
                     <span class="field-hint">
                         CURRENT AFFILIATION
+                    </span>
+                </div>
+
+                <!-- New agent status dropdown -->
+                <div class="form-field">
+                    <label for="status">AGENT STATUS</label>
+                    <select id="status" name="status"
+                            class="form-input" required>
+                        <option value="Active" selected>Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                    <span class="field-hint">
+                        CURRENT OPERATIONAL STATUS
                     </span>
                 </div>
             </div>
@@ -112,6 +119,38 @@
         </form>
     </div>
 
+    <!-- Current agents list -->
+    <div class="form-panel" style="margin-top: 24px;">
+        <div class="form-panel-header">
+            <div>
+                <span class="panel-index">02</span>
+                <span class="panel-title">CURRENT AGENTS</span>
+            </div>
+            <span class="panel-code">@Model.Count RECORD(S)</span>
+        </div>
+
+        @if (Model.Count == 0)
+        {
+            <p>No agents registered yet.</p>
+        }
+        else
+        {
+            @foreach (var agent in Model)
+            {
+                <div class="agent-row">
+                    <div>
+                        <p><strong>ID:</strong> @agent.Id</p>
+                        <p><strong>NAME:</strong> @agent.Name</p>
+                        <p><strong>NATIONALITY:</strong> @agent.Nationality</p>
+                        <p><strong>ORGANIZATION:</strong> @agent.Organization</p>
+                        <p><strong>STATUS:</strong> @agent.Status</p>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+    <!-- Security notice -->
     <div class="security-note">
         <span class="security-mark">i</span>
         <p>
@@ -124,3 +163,4 @@
         <span class="security-reference">REF. SIS-01</span>
     </div>
 </div>
+

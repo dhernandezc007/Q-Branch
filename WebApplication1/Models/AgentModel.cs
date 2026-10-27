@@ -15,4 +15,6 @@ public class AgentModel
     [Required] // Regular expression (Regex) : Makes this input required 
     public string Organization   { get; set; } = "";
     
+    public string Status { get; set; } = "Active";
+    
 }
