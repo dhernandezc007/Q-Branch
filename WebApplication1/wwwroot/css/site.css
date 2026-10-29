@@ -504,7 +504,7 @@ body {
 
 .division-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
 }
 
@@ -657,5 +657,341 @@ a.division-card:hover {
     .operation-row {
         align-items: flex-start;
         flex-direction: column;
+    }
+}
+
+.agent-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 0;
+    border-bottom: 1px solid #263751;
+}
+.agent-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.agent-link {
+    color: #6fafff;
+    background: none;
+    border: none;
+    font: inherit;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.agent-link:hover {
+    color: #ffffff;
+}
+
+/* =========================================
+   Q BRANCH / AGENT STATUS EDIT
+   ========================================= */
+
+.edit-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 36px 24px 60px;
+    color: #e7edf5;
+}
+
+/* Eyebrow / breadcrumb */
+
+.edit-page .page-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    color: #8fa7c2;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.edit-page .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #78a9d4;
+    box-shadow: 0 0 10px rgba(120, 169, 212, 0.45);
+}
+
+.edit-page .eyebrow-divider {
+    color: #536a83;
+}
+
+/* Heading */
+
+.edit-page .edit-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.edit-page .edit-heading h1 {
+    margin: 0 0 10px;
+    color: #f2f5fa;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+.edit-page .edit-heading h1 span {
+    color: #86a9ce;
+}
+
+.edit-page .edit-heading p {
+    margin: 0;
+    color: #8e9eb1;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Confidential document stamp */
+
+.edit-page .record-stamp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    min-width: 105px;
+    padding: 13px 15px;
+    border: 1px solid #344a63;
+    background: rgba(20, 39, 59, 0.55);
+    text-align: center;
+}
+
+.edit-page .record-stamp span {
+    color: #8fa7c2;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.edit-page .record-stamp strong {
+    color: #e4edf7;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Main panel */
+
+.edit-page .form-panel {
+    overflow: hidden;
+    border: 1px solid #2a3d53;
+    background: rgba(12, 25, 39, 0.88);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.edit-page .form-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 19px 24px;
+    border-bottom: 1px solid #2a3d53;
+    background: rgba(27, 46, 67, 0.45);
+}
+
+.edit-page .form-panel-header > div {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.edit-page .panel-index {
+    color: #86a9ce;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.edit-page .panel-title {
+    color: #dce6f1;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+}
+
+.edit-page .panel-code {
+    color: #71869e;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+/* Agent information */
+
+.edit-page .agent-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    padding: 28px 24px;
+}
+
+.edit-page .detail-field {
+    min-width: 0;
+}
+
+.edit-page .detail-label {
+    display: block;
+    margin-bottom: 10px;
+    color: #8fa7c2;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.edit-page .detail-value {
+    display: block;
+    min-height: 45px;
+    padding: 13px 14px;
+    border: 1px solid #293c51;
+    background: #101f30;
+    color: #dce6f1;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+/* Status editing section */
+
+.edit-page .status-section {
+    margin: 0 24px;
+    padding: 24px 0;
+    border-top: 1px solid #2a3d53;
+}
+
+.edit-page .status-description {
+    margin: 0 0 18px;
+    color: #8e9eb1;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.edit-page .status-select {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    min-height: 46px;
+    padding: 11px 14px;
+    border: 1px solid #405a76;
+    border-radius: 2px;
+    outline: none;
+    background: #101f30;
+    color: #edf3fa;
+    font: inherit;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.edit-page .status-select:focus {
+    border-color: #86a9ce;
+    box-shadow: 0 0 0 3px rgba(134, 169, 206, 0.12);
+}
+
+/* Footer and actions */
+
+.edit-page .form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 24px;
+    border-top: 1px solid #2a3d53;
+    background: rgba(19, 35, 52, 0.65);
+}
+
+.edit-page .required-note {
+    color: #71869e;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+}
+
+.edit-page .submit-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    min-height: 44px;
+    padding: 0 20px;
+    border: 1px solid #7399c0;
+    border-radius: 2px;
+    background: #6fafff;
+    color: #f3f7fc;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.edit-page .submit-button:hover {
+    border-color: #a7c6e7;
+    background: #355a7e;
+}
+
+.edit-page .submit-button:focus-visible {
+    outline: 2px solid #a7c6e7;
+    outline-offset: 3px;
+}
+
+.edit-page .back-link {
+    display: inline-block;
+    margin-top: 22px;
+    color: #91abc8;
+    font-size: 12px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.edit-page .back-link:hover {
+    color: #e7edf5;
+}
+
+/* Responsive layout */
+
+@media (max-width: 600px) {
+    .edit-page {
+        padding: 26px 14px 40px;
+    }
+
+    .edit-page .edit-heading {
+        flex-direction: column;
+    }
+
+    .edit-page .record-stamp {
+        align-items: flex-start;
+    }
+
+    .edit-page .agent-details {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 22px 18px;
+    }
+
+    .edit-page .form-panel-header {
+        padding: 16px 18px;
+    }
+
+    .edit-page .panel-code {
+        display: none;
+    }
+
+    .edit-page .status-section {
+        margin: 0 18px;
+    }
+
+    .edit-page .form-footer {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 18px;
+    }
+
+    .edit-page .submit-button {
+        width: 100%;
     }
 }

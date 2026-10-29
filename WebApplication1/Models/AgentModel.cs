@@ -4,6 +4,7 @@ namespace WebApplication1.Models;
 
 public class AgentModel
 {
+    [Required] // Regular expression (Regex) : Makes this input required
     public string Id { get; set; } = "";
     
     [Required] // Regular expression (Regex) : Makes this input required    

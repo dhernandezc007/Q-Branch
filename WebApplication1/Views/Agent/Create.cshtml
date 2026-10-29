@@ -145,10 +145,18 @@
                         <p><strong>ORGANIZATION:</strong> @agent.Organization</p>
                         <p><strong>STATUS:</strong> @agent.Status</p>
                     </div>
+                    
+                    <div class="agent-actions">
+                        <a asp-action="Edit"
+                           asp-route-id="@agent.Id"
+                           class="agent-link">EDIT</a>
+                    </div>
                 </div>
             }
         }
     </div>
+    
+
 
     <!-- Security notice -->
     <div class="security-note">
